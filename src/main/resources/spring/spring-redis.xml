@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans default-autowire="byName" xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+		     http://www.springframework.org/schema/beans
+		     http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <!--最大能够保持idle状态的对象数-->
+        <property name="maxIdle" value="10"/>
+        <!--最大分配的对象数-->
+        <property name="maxTotal" value="50"/>
+        <!--当调用borrow Oject方法时，是否进行有效性检查-->
+        <property name="testOnBorrow" value="true"/>
+    </bean>
+
+    <bean id="jedisPool" class="redis.clients.jedis.JedisPool">
+        <constructor-arg index="0" ref="jedisPoolConfig"/>
+        <constructor-arg index="1" value="${spring.redis.host}"/>
+        <constructor-arg index="2" value="${spring.redis.port}" type="int"/>
+        <constructor-arg index="3" value="${spring.redis.timeout}" type="int"/>
+        <constructor-arg index="4" value="${spring.redis.password}"/>
+    </bean>
+
+    <!--<bean id="jedisUtil" class="com.company.project.biz.util.JedisUtil">-->
+        <!--<constructor-arg index="0" ref="jedisPool"/>-->
+    <!--</bean>-->
+
+</beans>

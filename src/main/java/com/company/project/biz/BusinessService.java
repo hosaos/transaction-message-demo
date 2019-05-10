@@ -45,6 +45,7 @@ public class BusinessService {
         transferRecordMapper.insert(transferRecord);
 
         //执行A扣钱操作
+        //update user set money = money - #{money} where id = #{userId} and money >= #{money}
         int result = userMapper.reduceMoney(fromUserId, changeMoney);
         if (result <= 0) {
             throw new BizException("账户余额不足");

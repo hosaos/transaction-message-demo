@@ -14,3 +14,6 @@ CREATE TABLE `transfer_record` (
   `record_no` varchar(64) NOT NULL COMMENT '转账流水编号',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `user`(`id`, `money`) VALUES (1, 100);
+INSERT INTO `user`(`id`, `money`) VALUES (2, 0);

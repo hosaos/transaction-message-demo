@@ -71,6 +71,7 @@ public class Consumer {
                                                             ConsumeConcurrentlyContext context) {
                 for (MessageExt msg : msgs) {
                     System.out.println("收到消息," + new String(msg.getBody()));
+                    //Todo 执行加钱操作，比较简单，不写了
                 }
                 return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
             }

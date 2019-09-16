@@ -1,8 +1,13 @@
 操作步骤
+
 1、修改application-dev.yml中数据库连接为你本地连接地址
+
 2、执行table.sql中sql语句
+
 3、修改TransactionProducer及Consumer中nameServer地址
+
 4、启动MainApplication
+
 5、用户1给用户2转账操作，访问http://localhost:8080/test/mqTest
     每次转账100元
 

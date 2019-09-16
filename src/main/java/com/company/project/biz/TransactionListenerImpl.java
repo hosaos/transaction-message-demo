@@ -47,7 +47,7 @@ public class TransactionListenerImpl implements TransactionListener {
                 state = LocalTransactionState.ROLLBACK_MESSAGE;
             }
         } catch (Exception e) {
-            System.out.println("转账成功,fromUserId:"+transferRecord.getFromUserId()+",toUserId:"+transferRecord.getToUserId()+",money:"+transferRecord.getChangeMoney());
+            System.out.println("转账失败,fromUserId:"+transferRecord.getFromUserId()+",toUserId:"+transferRecord.getToUserId()+",money:"+transferRecord.getChangeMoney());
             e.printStackTrace();
         }
 

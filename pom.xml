@@ -14,7 +14,7 @@
         <commons.lang3.version>3.6</commons.lang3.version>
         <druid.version>1.1.6</druid.version>
         <fastjson.version>1.2.44</fastjson.version>
-        <freemarker.version>2.3.28</freemarker.version>
+        <freemarker.version>2.3.35</freemarker.version>
         <lombok.version>1.16.8</lombok.version>
     </properties>
 
